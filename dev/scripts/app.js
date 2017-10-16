@@ -11,6 +11,12 @@ class App extends React.Component {
 		this.state = {
 			
 		}
+	displayResults(){
+
+	}
+	displayResult(){
+		
+	}
 	render(){
 		return(
 			<div>
