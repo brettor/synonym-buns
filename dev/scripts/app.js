@@ -33,8 +33,37 @@ class App extends React.Component {
 	}
 	render(){
 		return(
-			<div>
-				<h1>I'm Working!</h1>
+			<form>
+				<input className='userInput'>
+
+				</input>
+			</form>
+			<div className='bun bunOne'>
+				
+			</div>
+			<div className='bun bunTwo'>
+				
+			</div>
+			<div className='bun bunThree'>
+				
+			</div>
+			<div className='bun bunFour'>
+				
+			</div>
+			<div className='bun bunFive'>
+				
+			</div>
+			<div className='bun bunSix'>
+				
+			</div>
+			<div className='bun bunSeven'>
+				
+			</div>
+			<div className='bun bunEight'>
+				
+			</div>
+			<div className='bun bunNine'>
+				
 			</div>
 		)
 	}
