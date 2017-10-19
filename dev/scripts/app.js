@@ -3,24 +3,26 @@ import ReactDOM from 'react-dom';
 import {
 	BrowserRouter as Router,
 	Route, Link } from 'react-router-dom';
-import $ from 'jquery';
+import { ajax } from 'jquery';
 
 class App extends React.Component {
-	constructor(){
-		super();
-		this.state = {
-			word: ''
-		}
-	getWord(){
-		
+	constructor(props){
+		super(props);
+		this.state = {value: ''};
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	handleChange(event){
+		this.setState({value: event.target.value});
 	}
-	getResults(){
-		let key = `329e5845b48db0aab44801990a002d78`
-		ajax({
+	handleSubmit(){
+		event.preventDefault();
+		let key = `329e5845b48db0aab44801990a002d78`;
+		let word = this.state.value;
+		$.ajax({
+			type: 'GET',
 			url: `http://words.bighugelabs.com/api/2/${key}/${word}/json`,
-			data: {
-				 
-			}
+			contentType: "application/json; charset=utf-8",
+			dataType: "json"
 		}).then((res) => {
 			console.log(res);
 		});
@@ -33,13 +35,15 @@ class App extends React.Component {
 	}
 	render(){
 		return(
-			<form>
-				<input className='userInput'>
-
-				</input>
+			<form onSubmit={this.handleSubmit}>
+				<label>
+					What's the word?
+					<input type="text" value={this.state.value} onChange={this.handleChange} />
+				</label>
+				<input type="submit" value="Submit" />
 			</form>
 			<div className='bun bunOne'>
-				
+
 			</div>
 			<div className='bun bunTwo'>
 				
