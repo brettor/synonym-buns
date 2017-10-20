@@ -1,37 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-	BrowserRouter as Router,
-	Route, Link } from 'react-router-dom';
 import { ajax } from 'jquery';
 
 class App extends React.Component {
-	constructor(props){
-		super(props);
+	constructor(){
+		super();
 		this.state = {value: ''};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	handleChange(event){
-		this.setState({value: event.target.value});
+		this.setState({
+			value: event.target.value
+		});
 	}
 	handleSubmit(){
 		event.preventDefault();
 		let key = `329e5845b48db0aab44801990a002d78`;
 		let word = this.state.value;
-		$.ajax({
-			type: 'GET',
+		ajax({
 			url: `http://words.bighugelabs.com/api/2/${key}/${word}/json`,
+			type: 'GET',
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
 		}).then((res) => {
 			console.log(res);
 		});
-	}
-	displayResults(){
-
-	}
-	displayResult(){
-		
 	}
 	render(){
 		return(
@@ -58,15 +51,6 @@ class App extends React.Component {
 				
 			</div>
 			<div className='bun bunSix'>
-				
-			</div>
-			<div className='bun bunSeven'>
-				
-			</div>
-			<div className='bun bunEight'>
-				
-			</div>
-			<div className='bun bunNine'>
 				
 			</div>
 		)
