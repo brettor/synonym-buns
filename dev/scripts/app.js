@@ -28,30 +28,45 @@ class App extends React.Component {
 	}
 	render(){
 		return(
-			<form onSubmit={this.handleSubmit}>
-				<label>
-					What's the word?
-					<input type="text" value={this.state.value} onChange={this.handleChange} />
-				</label>
-				<input type="submit" value="Submit" />
-			</form>
-			<div className='bun bunOne'>
-
-			</div>
-			<div className='bun bunTwo'>
-				
-			</div>
-			<div className='bun bunThree'>
-				
-			</div>
-			<div className='bun bunFour'>
-				
-			</div>
-			<div className='bun bunFive'>
-				
-			</div>
-			<div className='bun bunSix'>
-				
+			<div className='app'>
+				<header>
+					<div className='wrapper'>
+						<form onSubmit={this.handleSubmit}>
+							<label>
+								What's the word?
+								<input type="text" value={this.state.value} onChange={this.handleChange} />
+							</label>
+							<input type="submit" value="Submit" />
+						</form>
+					</div>
+				</header>
+				<main>
+					<div className='wrapper'>
+						<div className='bun bunOne'>
+							Bun1
+						</div>
+						<div className='bun bunTwo'>
+							Bun2
+						</div>
+						<div className='bun bunThree'>
+							Bun3
+						</div>
+						<div className='bun bunFour'>
+							Bun4
+						</div>
+						<div className='bun bunFive'>
+							Bun5
+						</div>
+						<div className='bun bunSix'>
+							Bun6
+						</div>
+					</div>
+				</main>
+				<footer>
+					<div className='wrapper'>
+						<p>&copy; 2017 Brett Nielsen</p>
+					</div>
+				</footer>
 			</div>
 		)
 	}
