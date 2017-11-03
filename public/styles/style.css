@@ -5,7 +5,9 @@ main {
   background: #FFFFFC; }
 
 .bun {
-  background: #FF1B1C; }
+  background: #FF1B1C;
+  height: 100px;
+  width: 100px; }
 
 footer {
   background: #BEB7A4; }
